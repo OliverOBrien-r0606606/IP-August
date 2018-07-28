@@ -1,0 +1,40 @@
+
+
+---
+
+
+spring:
+  profiles: derby
+
+  datasource:
+   url: jdbc:derby://localhost:1527/foodz;create=true
+   username:
+   password:
+   driver-class-name: org.apache.derby.jdbc.ClientDriver
+  jpa:
+   hibernate:
+    ddl-auto: create
+   database-platform: org.hibernate.dialect.DerbyTenSevenDialect
+
+
+---
+
+
+spring:
+  profiles: postgres
+
+
+  datasource:
+   url: jdbc:postgresql://gegevensbanken.khleuven.be:51617/2TX31?sslmode=require&amp;sslfactory=org.postgresql.ssl.NonValidatingFactory&amp;currentSchema=r0606606
+   username: r0606606
+   password: its-STUDENT101ucll-
+   driver-class-name: org.postgresql.Driver
+   platform: postgres
+   hikari:
+     maximum-pool-size: 5
+
+  jpa:
+   hibernate:
+    ddl-auto: create
+
+
