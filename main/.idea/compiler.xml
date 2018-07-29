@@ -12,9 +12,9 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="main" target="1.5" />
-      <module name="model" target="1.8" />
+      <module name="model" target="1.5" />
       <module name="view" target="1.8" />
-      <module name="web" target="1.8" />
+      <module name="web" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
