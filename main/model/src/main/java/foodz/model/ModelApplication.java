@@ -26,20 +26,5 @@ public class ModelApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(ModelApplication.class);
 
-	@Bean
-	public CommandLineRunner demo(RecipeRepository repository) {
-		return (args) -> {
-			Ingredient paprika=new Ingredient("Paprika",100,"g");
-			Ingredient corn =new Ingredient("Corn",1,"cup");
-			ArrayList<Ingredient> ingredients = new ArrayList<Ingredient>();
-			ingredients.add(paprika);
-			ingredients.add(corn);
-			repository.save(new Recipe("test","test","test",ingredients));
-
-			log.info(Long.toString(repository.count()));
-
-		};
-	}
-
 
 }
