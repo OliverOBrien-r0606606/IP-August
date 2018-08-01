@@ -1,21 +1,21 @@
 #nav-bar{
-    position: relative;
+    position: fixed;
     top: 0;
-    left: 0;
+
     background-color: #eff9ec;
     border: #eff9ec 2px solid;
     display: flex;
     align-items: left;
-    width:100%
+    width:80%;
 }
 
 .nav-bar-element{
-    width: 70px;
-    height: 30px;
+    width: 100px;
+    padding: 20px;
     color: #292929;
     font-weight: bold;
     font-size: larger;
-
+    text-align: center;
 }
 #current.nav-bar-element{
     background-color: #ee0f00;
@@ -26,4 +26,12 @@
 .nav-bar-element:hover{
     background-color: #abeea5;
     color: white;
+}
+
+/*
+ * Navigation Bar Login
+ */
+
+#nav-bar #nav-bar-login{
+    margin: 0 20px 0 auto;
 }

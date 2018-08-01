@@ -1,5 +1,6 @@
 
 
+
 ---
 
 
@@ -35,6 +36,6 @@ spring:
 
   jpa:
    hibernate:
-    ddl-auto: create
+    ddl-auto: create-drop
 
 

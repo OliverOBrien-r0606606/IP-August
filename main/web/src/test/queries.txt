@@ -1,0 +1,6 @@
+
+### Get all the userroles with user with username
+select *
+from user_roles a, users b
+where b.username='DDN'
+and a.userid=b.userid

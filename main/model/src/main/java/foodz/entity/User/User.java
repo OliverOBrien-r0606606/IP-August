@@ -7,20 +7,52 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long userId;
+    @Column(name = "userid")
+    private Long userId;
+    @Column(name = "username")
+    private String username;
 
-    @Column(columnDefinition = "VARCHAR(32)")
+    @Column(columnDefinition = "VARCHAR(32)", name = "name")
     private String name;
+
+    @Column(columnDefinition = "VARCHAR(32)", name = "sir")
     private String sirName;
+    @Column(columnDefinition = "VARCHAR(32)", name = "email")
     private String email;
+    @Column(columnDefinition = "VARCHAR(256)", name = "pass")
     private String password;
-    @Column(columnDefinition = "VARCHAR(32)")
-    private String salt;
-    @Column(columnDefinition = "VARCHAR(10)")
-    private Role role;
+    @Column(name = "enabled")
+    private int enabled;
+
+    public User(User user) {
+        this.setUserId(user.getUserId());
+        this.setName(user.getName());
+        this.setEmail(user.getEmail());
+        this.setSirName(user.getSirName());
+        this.setEnabled(user.getEnabled());
+        this.setPassword(user.getPassword());
+        this.setUsername(user.getUsername());
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public long getUserId() {
+        return userId;
+    }
 
     public String getName() {
         return name;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String userName) {
+        this.username = userName;
     }
 
     public void setName(String name) {
@@ -51,31 +83,29 @@ public class User {
         this.password = password;
     }
 
-    public String getSalt() {
-        return salt;
+    public int getEnabled() {
+        return enabled;
     }
 
-    public void setSalt(String salt) {
-        this.salt = salt;
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
     }
 
-    public Role getRole() {
-        return role;
+    public boolean authenticate(String password){
+        return this.getPassword().matches(password);
     }
 
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
-    public long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public User(String username, String name, String sirName, String email, String password, int enabled) {
+        this.username = username;
+        this.name = name;
+        this.sirName = sirName;
+        this.email = email;
+        this.password = password;
+        this.enabled = enabled;
     }
 
     public User() {
+
 
     }
 

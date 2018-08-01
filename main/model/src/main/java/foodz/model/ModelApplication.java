@@ -15,7 +15,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.util.ArrayList;
 
-@EnableJpaRepositories("foodz.db")
+
 @EntityScan({"foodz.entity.Recipe", "foodz.entity" })
 @SpringBootApplication
 public class ModelApplication {
