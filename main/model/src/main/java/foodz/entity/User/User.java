@@ -1,5 +1,7 @@
 package foodz.entity.User;
 
+import org.springframework.lang.Nullable;
+
 import javax.persistence.*;
 
 @Entity
@@ -38,8 +40,8 @@ public class User {
         this.userId = userId;
     }
 
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public long getUserId() {
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    public Long getUserId() {
         return userId;
     }
 

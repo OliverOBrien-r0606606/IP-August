@@ -39,17 +39,9 @@ public class UserController {
         if(error.hasErrors()){
             return "registration";
         }
-
-        User newUser = new User(user.getUsername(),
-                user.getName(),
-                user.getSirname(),
-                user.getEmail(),
-                user.getPassword(),
-                1);
-
-        userService.save(newUser);
-        userService.addRoleToUserByEmail(newUser.getEmail(),"ROLE_USER");
-        securityService.autologin(newUser.getUsername(),user.getConfirmPassword());
+        userService.save(new User(user));
+        userService.addRoleToUserByEmail(user.getEmail(),"ROLE_USER");
+        securityService.autologin(user.getUsername(),user.getConfirmPassword());
 
         return "redirect:/";
     }

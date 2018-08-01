@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -24,8 +25,18 @@ public class UserServiceImpl{
     @Autowired
     private UserRoleRepository roleRepository;
 
+    @Autowired
+    private BCryptPasswordEncoder encoder;
+
+
     public void save(User user) {
-        user.setPassword((user.getPassword()));
+        user.setPassword(encoder.encode(user.getPassword()));
+        System.out.println("USER MAIL: "+user.getEmail());
+        System.out.println("USER USERNAME: "+user.getUsername());
+        System.out.println("USER NAME: "+user.getName());
+        System.out.println("USER SIRNAME: "+user.getSirName());
+        System.out.println("USER ENABLED: "+user.getEnabled());
+        System.out.println("USER PASS: "+user.getPassword());
         userRepository.save(user);
     }
 

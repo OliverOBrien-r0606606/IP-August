@@ -48,7 +48,7 @@ public class SecurityServiceImpl{
         System.out.println(usernamePasswordAuthenticationToken.isAuthenticated());
         if(usernamePasswordAuthenticationToken.isAuthenticated()){
             SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
-            logger.debug(String.format("Auto login % success!",email));
+            logger.debug(String.format("Auto login %s success!",email));
         }
     }
 

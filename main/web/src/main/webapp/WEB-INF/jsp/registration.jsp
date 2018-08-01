@@ -45,8 +45,8 @@
         </tr>
         <tr>
             <td><spring:message code="registration.sirname"/></td>
-            <td><form:input path="sirname"/></td>
-            <td><form:errors path="sirname"/></td>
+            <td><form:input path="sirName"/></td>
+            <td><form:errors path="sirName"/></td>
         </tr>
 
         <tr>

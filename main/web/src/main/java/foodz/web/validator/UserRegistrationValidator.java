@@ -28,7 +28,7 @@ public class UserRegistrationValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "registration.error.empty.email");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "password", "registration.error.empty.password");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "registration.error.empty.name");
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "sirname", "registration.error.empty.sirname");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "sirName", "registration.error.empty.sirname");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "username", "registration.error.empty.username");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirmPassword", "registration.error.empty.confirmPassword");
 
@@ -44,7 +44,7 @@ public class UserRegistrationValidator implements Validator {
             if(service.getByUsername(user.getUsername())!=null){
                 errors.rejectValue("username","registration.error.inUse.username");
             }
-            if(!user.getConfirmPassword().equals(user.getPassword())){
+            if(!user.confirmPassword()){
                 errors.rejectValue("confirmPassword","registration.error.mismatchPass");
             }
         }
