@@ -15,6 +15,7 @@ public class Ingredient {
     private double amount;
     private String unit;
 
+
     public long getId() {
         return id;
     }

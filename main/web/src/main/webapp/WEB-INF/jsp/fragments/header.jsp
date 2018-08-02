@@ -22,26 +22,35 @@
             <a href="${pageContext.request.contextPath}/ADMIN/test" class="nav-bar-element">TEST</a>
         </c:otherwise>
     </c:choose>
+    <c:choose>
+        <c:when test="${param.page eq'Recipes'}">
+            <a href="${pageContext.request.contextPath}/recipe/list" class="nav-bar-element" id="current">Recipes</a>
+        </c:when>
+        <c:otherwise>
+            <a href="${pageContext.request.contextPath}/recipe/list" class="nav-bar-element">Recipes</a>
+        </c:otherwise>
+    </c:choose>
     <sec:authorize access="isAnonymous()">
         <c:choose>
             <c:when test="${param.page eq'Login'}">
-                <a href="${pageContext.request.contextPath}login" class="nav-bar-element" id="current">Login</a>
+                <a href="${pageContext.request.contextPath}/login" class="nav-bar-element login" id="current">Login</a>
             </c:when>
             <c:otherwise>
-                <a href="${pageContext.request.contextPath}login" class="nav-bar-element">Log in</a>
+                <a href="${pageContext.request.contextPath}/login" class="nav-bar-element login">Log in</a>
             </c:otherwise>
         </c:choose>
         <c:choose>
             <c:when test="${param.page eq'Register'}">
-                <a href="${pageContext.request.contextPath}/user/register" class="nav-bar-element" id="current">register</a>
+                <a href="${pageContext.request.contextPath}/user/register" class="nav-bar-element login" id="current">register</a>
             </c:when>
             <c:otherwise>
-                <a href="${pageContext.request.contextPath}/user/register" class="nav-bar-element">Register</a>
+                <a href="${pageContext.request.contextPath}/user/register" class="nav-bar-element login">Register</a>
             </c:otherwise>
         </c:choose>
+
     </sec:authorize>
     <sec:authorize access="isAuthenticated()">
-        <a href="${pageContext.request.contextPath}" class="nav-bar-element" id="current">Log out</a>
+        <a href="${pageContext.request.contextPath}/logout" class="nav-bar-element login" id="current">Log out</a>
     </sec:authorize>
 
 </div>

@@ -16,9 +16,10 @@
     font-weight: bold;
     font-size: larger;
     text-align: center;
+    text-decoration:none;
 }
 #current.nav-bar-element{
-    background-color: #ee0f00;
+    background-color: #c9ffc4;
 }
 #nav-bar:hover{
     border: #abeea5 2px solid;
@@ -32,6 +33,6 @@
  * Navigation Bar Login
  */
 
-#nav-bar #nav-bar-login{
-    margin: 0 20px 0 auto;
+.nav-bar-element.login{
+
 }

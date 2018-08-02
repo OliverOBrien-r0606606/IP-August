@@ -1,5 +1,23 @@
 body{
     width: 80%;
     margin: auto;
-    padding-top: 40px;
+    padding-top: 80px;
+}
+
+a.button{
+    text-decoration: none;
+    font-size: large;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #c9ffc4;
+    border: #6dc580 2px solid;
+    padding: 5px;
+}
+a.button:hover{
+    background-color: #f5ffa9;
+    border: #d4d047 2px solid;
+}
+a.button.big{
+    font-size: larger;
+    padding: 10px;
 }
