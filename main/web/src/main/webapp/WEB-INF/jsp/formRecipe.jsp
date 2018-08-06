@@ -5,9 +5,11 @@
 
 <link rel="stylesheet" href="/css/navbar.css" type="text/css">
 <link type="text/css" rel="stylesheet" href="/css/main.css"/>
+<link type="text/css" rel="stylesheet" href="/css/formRecipe.css"/>
 <html>
+<spring:message code="page.title.${pageName}" var="title"/>
 <jsp:include page="fragments/head.jsp">
-    <jsp:param name="pageName" value="${pageName} Recipe"/>
+    <jsp:param name="pageName" value="${title}"/>
 </jsp:include>
 <body>
 
@@ -15,16 +17,16 @@
     <jsp:param name="page" value="${pageName} Recipe"/>
 </jsp:include>
 
-<h2>${pageName} Recipe</h2>
+<h2>${pageName} <spring:message code="recipe.recipeTitle"/> </h2>
 
-<form:form method="POST" action="${pageContext.request.contextPath}/recipe/${pageName}Recipe" modelAttribute="recipe">
+<spring:message code="recipe.ingredients" var="ingredients"/>
+<spring:message code="recipe.allergies" var="alergies"/>
+<form:form method="POST" action="" modelAttribute="recipe" id="submit">
     <table id="item-form">
-        <tr><form:input path="id" style="display: none"/></tr>
+        <tr ><form:input path="id" style="visibility: hidden"/></tr>
         <tr class="item-form-row">
             <td><label for="name"><spring:message code="recipe.name"/></label></td>
             <td><form:input path="Name" name="name"/></td>
-
-
             <td><form:errors path="name"/></td>
         </tr>
         <tr class="item-form-row">
@@ -37,39 +39,54 @@
             <td><form:textarea path="directions" name="directions" rows="10" cols="100"/></td>
             <td><form:errors path="directions"/></td>
         </tr>
-        <tr class="item-form-devider"><spring:message code="recipe.allergies"/>:</tr>
+        <tr class="item-form-devider 3"><h3 class="move" name="3">${ingredients}:</h3></tr>
         <tr class="item-form-row">
             <td>
-                <form:checkbox path="vegetarian" name="vegitarian" value="vegitarian"/><label for="vegitarian"><spring:message code="recipe.allergies.vegetarian"/></label>
-                <form:checkbox path="vegan" name="vegan" value="vegan"/><label for="vegan"><spring:message code="recipe.allergies.vegan"/></label>
-                <form:checkbox path="gluten" name="gluten" value="gluten"/><label for="gluten"><spring:message code="recipe.allergies.gluten"/></label>
-                <form:checkbox path="lactose" name="lactose" value="lactose"/><label for="lactose"><spring:message code="recipe.allergies.lactose"/></label>
-                <form:checkbox path="nuts" name="nut" value="nut"/><label for="nut"><spring:message code="recipe.allergies.nuts"/></label>
+                <form:checkbox path="vegetarian" name="vegitarian" value="vegitarian"/><spring:message code="recipe.allergies.vegetarian"/>
+                <form:checkbox path="vegan" name="vegan" value="vegan"/><spring:message code="recipe.allergies.vegan"/>
+                <form:checkbox path="gluten" name="gluten" value="gluten"/><spring:message code="recipe.allergies.gluten"/>
+                <form:checkbox path="lactose" name="lactose" value="lactose"/><spring:message code="recipe.allergies.lactose"/>
+                <form:checkbox path="nuts" name="nut" value="nut"/><spring:message code="recipe.allergies.nuts"/>
             </td>
         </tr>
-        <tr class="item-form-devider"><spring:message code="recipe.ingredients"/>:</tr>
-        <tr class="item-form-row">
-            <table>
+        <tr class="item-form-devider 2"><h3 class="move" name="2">${alergies}:</h3></tr>
+        <tr class="item-form-row 1">
+            <table class="move" name="1">
                 <thead>
-                    <th><spring:message code="recipe.ingredients.amount"/></th>
-                    <th><spring:message code="recipe.ingredients.unit"/></th>
-                    <th><spring:message code="recipe.ingredients.name"/></th>
+                <th><spring:message code="recipe.ingredients.amount"/></th>
+                <th><spring:message code="recipe.ingredients.unit"/></th>
+                <th><spring:message code="recipe.ingredients.name"/></th>
                 </thead>
+                <tbody>
                 <c:forEach var="ingredient" items="${recipe.ingredients}" varStatus="status">
-                    <tr>
-                        <td><form:input path="ingredients[${status.index}].amount" name="amount"/></td>
-                        <td><form:input path="ingredients[${status.index}].unit" name="unit"/></td>
-                        <td><form:input path="ingredients[${status.index}].name" name="unit"/></td>
+                    <tr class="list-item">
+                        <td class="toNumber amount"><form:input path="ingredients[${status.index}].amount" name="amount"/></td>
+                        <td class="todropdown unit"><form:input path="ingredients[${status.index}].unit" name="unit"/></td>
+                        <td class="name"><form:input path="ingredients[${status.index}].name" name="unit"/></td>
+                        <td>
+                            <a href="#" class="item-remove-button">
+                                <img src="/images/remove.gif" alt="add" title="remove ${ingredient.name}"
+                                     class="alterOption-icon">
+                            </a></td>
                     </tr>
                 </c:forEach>
+                <tr id="list-item-new">
+                    <a href="#" onclick="addIngredientLine()">
+                        <img src="/images/add.gif" alt="add" title="Add ingredient" class="alterOption-icon">
+                    </a>
+                </tr>
+                </tbody>
             </table>
         </tr>
         <tr>
-            <form:button value="">${pageName}</form:button>
+            <button type="button" onclick="newRecipe()"><spring:message code="button.send"/></button>
         </tr>
 
     </table>
 </form:form>
-
+<div id="ScriptContainer">
+    <script type="text/javascript" src="/javascript/jquery.js"></script>
+    <script type="text/javascript" src="/javascript/newRecipe.js"></script>
+</div>
 </body>
 </html>

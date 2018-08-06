@@ -14,7 +14,6 @@
     padding: 20px;
     color: #292929;
     font-weight: bold;
-    font-size: larger;
     text-align: center;
     text-decoration:none;
 }
@@ -33,6 +32,11 @@
  * Navigation Bar Login
  */
 
-.nav-bar-element.login{
-
+.nav-bar-element.right{
+    width:auto;
+    margin-left:auto;
+    font-size:xx-small
+}
+.nav-bar-element.right *{
+    font-size:xx-small
 }

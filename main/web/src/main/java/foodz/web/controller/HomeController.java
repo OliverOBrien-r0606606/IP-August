@@ -10,9 +10,13 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping(value = "/")
 public class HomeController {
-
-
     @RequestMapping("/")
+    public String indexPage() {
+
+        return "index";
+    }
+
+    @RequestMapping("/home")
     public String mainPage() {
 
         return "home";

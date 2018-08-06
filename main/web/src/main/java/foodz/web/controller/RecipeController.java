@@ -1,18 +1,21 @@
 package foodz.web.controller;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import foodz.entity.Recipe.Ingredient;
 import foodz.entity.Recipe.Recipe;
+import foodz.entity.Recipe.Unit;
 import foodz.web.service.RecipeService;
 import org.apache.jasper.tagplugins.jstl.core.Redirect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.List;
 
 @Controller
 @RequestMapping("/recipe")
@@ -48,7 +51,7 @@ public class RecipeController {
     public ModelAndView edit(@PathVariable long id, ModelMap model){
         Recipe recipe = recipeService.getRecipe(id);
 
-        model.addAttribute("pageName","Edit");
+        model.addAttribute("pageName","edit");
         return new ModelAndView("formRecipe","recipe",recipe);
     }
 
@@ -81,7 +84,7 @@ public class RecipeController {
 
     @RequestMapping("/create")
     public ModelAndView newRecipeForm(ModelMap model){
-        model.addAttribute("pageName","Create");
+        model.addAttribute("pageName","create");
         return new ModelAndView("formRecipe","recipe",new Recipe());
     }
 
@@ -90,4 +93,44 @@ public class RecipeController {
         recipeService.save(recipe);
         return "redirect:/recipe/list";
     }
+
+    @ResponseBody
+    @GetMapping("/unit")
+    public List<String> getOptions() {
+        List<Unit> units = new ArrayList<Unit>(EnumSet.allOf(Unit.class));
+        List<String> out = new ArrayList<String>();
+        for(Unit u : units){
+            out.add("{\"Enum\":\""+u+"\",\"option\":\""+u.option()+"\"}");
+        }
+        return out;
+
+    }
+    @ResponseBody
+    @PostMapping("/post")
+    public String post(@RequestBody Recipe recipe){
+        System.out.println("###############[RECIPE]#################");
+        System.out.println("NAME: "+recipe.getName());
+        System.out.println("DESCRIPTION: "+recipe.getDescription());
+        System.out.println("DIRECTIONS: "+recipe.getDirections());
+        System.out.println("ID: "+recipe.getId());
+        System.out.println("INGREDIENTS: ([ID]: amount unit - ingredient)");
+        for(Ingredient i : recipe.getIngredients()){
+            System.out.println("\t["+i.getId()+"]: "+ i.getAmount()+" "+i.getUnit()+" - "+i.getName());
+        }
+        System.out.println("Alergies: " +
+                ((recipe.isVegetarian())?"v ":"")+
+                ((recipe.isVegan())?"V ":"")+
+                ((recipe.isGluten())?"G ":"")+
+                ((recipe.isLactose())?"L ":"")+
+                ((recipe.isNuts())?"N ":""));
+        recipeService.save(recipe);
+        return "redirect:/recipe/list";
+    }
+
+    @PostMapping("/test")
+    public String test(@RequestBody String test){
+        System.out.println(test);
+        return "";
+    }
+
 }

@@ -19,20 +19,20 @@
     <jsp:param name="page" value="Login"/>
 </jsp:include>
 <H1>LOGIN</H1>
-<spring:message code="login.Email-placeholder" var="email-placeholder"/>
-<spring:message code="login.Pass-placeholder" var="pass-placeholder"/>
+<spring:message code="login.Email-placeholder" var="emailPlaceholder"/>
+<spring:message code="login.Pass-placeholder" var="passPlaceholder"/>
 <spring:message code="login.login" var="login"/>
 
 <form:form modelAttribute="User" method="POST"  action="${pageContext.request.contextPath}/login">
     <table>
         <tr>
             <td><spring:message code="login.userName"/> </td>
-            <td><form:input path="username" placeholder="${email-placeholder}" /></td>
+            <td><form:input path="username" placeholder="${emailPlaceholder}"/></td>
             <td><form:errors path="username"/></td>
         </tr>
         <tr>
             <td><spring:message code="login.password"/> </td>
-            <td><form:password path="password" /></td>
+            <td><form:password path="password" placeholder="${passPlaceholder}"/></td>
             <td><form:errors path="password"/></td>
         </tr>
         <tr>

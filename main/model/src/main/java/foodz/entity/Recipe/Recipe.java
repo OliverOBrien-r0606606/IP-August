@@ -81,9 +81,6 @@ public class Recipe {
         return ingredients;
     }
 
-    public void setIngredients(ArrayList<Ingredient> ingredients) {
-        this.ingredients = ingredients;
-    }
 
     public long getId() {
         return id;

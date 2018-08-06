@@ -42,13 +42,13 @@ INSERT INTO recipe(description, directions, name,vegetarian,vegan,gluten,lactose
         TRUE,TRUE,TRUE,TRUE,TRUE );
 
 INSERT INTO ingredient (amount, name, unit) VALUES
-(2,'Eggs',''),
-(50,'Cheese (I used cheddar)','grams'),
-(1,'Onion',''),
-(200,'Mushrooms','grams'),
-(250,'Paprika','grams'),
-(1,'Sharwoods Tandoori paste','Tbsp.'),
-(1,'Brown sugar','Tbsp.'),
+(2,'Eggs','piece'),
+(50,'Cheese (I used cheddar)','gram'),
+(1,'Onion','piece'),
+(200,'Mushrooms','gram'),
+(250,'Paprika','gram'),
+(1,'Sharwoods Tandoori paste','tablespoon'),
+(1,'Brown sugar','tablespoon'),
 (0.5,'Basmati rice','cup');
 
 INSERT INTO recipe_ingredients (recipe_id, ingredients_id) VALUES

@@ -7,10 +7,12 @@
 
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <jsp:include page="fragments/head.jsp">
+
     <jsp:param name="pageName" value="Recipes"/>
 </jsp:include>
 <body>
@@ -18,17 +20,17 @@
     <jsp:param name="page" value="Recipes"/>
 </jsp:include>
 
-<h2>Recipes</h2>
+<h2><spring:message code="recipe.listTitle"/></h2>
 
 
 <div id="table-Container">
     <table id="item-table">
         <thead id="item-table-head">
-            <th>Name</th>
-            <th>Description</th>
-            <th>Difficulty</th>
+            <th><spring:message code="recipe.name"/> </th>
+            <th><spring:message code="recipe.description"/></th>
+            <th><spring:message code="recipe.difficulty"/></th>
         <sec:authorize access="hasRole('ROLE_ADMIN')">
-            <th>Edit / Delete</th>
+            <th><spring:message code="recipe.editRemove"/> </th>
         </sec:authorize>
         </thead>
         <tbody>
@@ -60,10 +62,11 @@
                     </td>
                     <td class="item-expandable">
                         <h6>
-                            Difficulty:  <c:choose>
-                                            <c:when test="${fn:length(recipe.ingredients) le 5}">Novice</c:when>
-                                            <c:when test="${fn:length(recipe.ingredients) gt 5}">Advanced</c:when>
-                                            <c:when test="${fn:length(recipe.ingredients) gt 10}">Expert</c:when>
+                            <spring:message code="recipe.difficulty"/>
+                            :  <c:choose>
+                                            <c:when test="${fn:length(recipe.ingredients) le 5}"><spring:message code="recipe.difficulty.novice"/></c:when>
+                                            <c:when test="${fn:length(recipe.ingredients) gt 5}"><spring:message code="recipe.difficulty.advanced"/></c:when>
+                                            <c:when test="${fn:length(recipe.ingredients) gt 10}"><spring:message code="recipe.difficulty.expert"/></c:when>
                                             <c:otherwise></c:otherwise>
                                         </c:choose>
                         </h6>

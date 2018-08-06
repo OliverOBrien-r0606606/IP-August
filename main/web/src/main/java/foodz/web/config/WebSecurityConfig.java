@@ -44,6 +44,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         System.out.println("SECURITY BEING INSTANTIATED");
        http.authorizeRequests().antMatchers("/","/h2-console/**","/recipe/list").permitAll()
+               .and()
+               .authorizeRequests().antMatchers("/recipe/**").hasAnyRole("ADMIN","USER")
                 .and()
                 .authorizeRequests().antMatchers("/ADMIN/**").hasRole("ADMIN")
                 .and()
