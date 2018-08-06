@@ -21,7 +21,8 @@ spring:
 
 
 ---
-
+server:
+  port: 10355
 
 spring:
   profiles: postgres
