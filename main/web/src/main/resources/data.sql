@@ -39,7 +39,7 @@ INSERT INTO recipe(description, directions, name,vegetarian,vegan,gluten,lactose
                'cook rice. ' ||
                 'eat',
         'curry',
-        TRUE,TRUE,TRUE,TRUE,TRUE );
+ FALSE,FALSE,FALSE,FALSE,FALSE );
 
 INSERT INTO ingredient (amount, name, unit) VALUES
 (2,'Eggs','piece'),

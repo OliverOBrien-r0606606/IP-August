@@ -22,6 +22,12 @@
 
 <h2><spring:message code="recipe.listTitle"/></h2>
 
+<spring:message code="recipe.allergies.vegetarian" var="vegetarian"/>
+<spring:message code="recipe.allergies.vegan" var="vegan"/>
+<spring:message code="recipe.allergies.lactose" var="lactose"/>
+<spring:message code="recipe.allergies.gluten" var="gluten"/>
+<spring:message code="recipe.allergies.nuts" var="nuts"/>
+
 
 <div id="table-Container">
     <table id="item-table">
@@ -39,19 +45,19 @@
                     <td>
                         <h4>${recipe.name}</h4>
                         <c:if test="${recipe.vegetarian}">
-                            <img src="/images/vegetarian.gif" class="item-boolean-icon" title="Vegetarian">
+                            <img src="/images/vegetarian.gif" class="item-boolean-icon" title="${vegetarian}">
                         </c:if>
                         <c:if test="${recipe.vegan}">
-                            <img src="/images/vegan.gif" class="item-boolean-icon" title="Vegan">
+                            <img src="/images/vegan.gif" class="item-boolean-icon" title="${vegan}">
                         </c:if>
                         <c:if test="${recipe.gluten}">
-                            <img src="/images/gluten.gif" class="item-boolean-icon" title="Contains Gluten">
+                            <img src="/images/gluten.gif" class="item-boolean-icon" title="${gluten}">
                         </c:if>
                         <c:if test="${recipe.lactose}">
-                            <img src="/images/lactose.gif" class="item-boolean-icon" title="Contains lactose">
+                            <img src="/images/lactose.gif" class="item-boolean-icon" title="${lactose}">
                         </c:if>
                         <c:if test="${recipe.nuts}">
-                            <img src="/images/nut.gif" class="item-boolean-icon" title="Contains nuts">
+                            <img src="/images/nut.gif" class="item-boolean-icon" title="${nuts}">
                         </c:if>
                     </td>
                     <td class="item-expandable">
@@ -100,9 +106,9 @@
 
 <sec:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_USER')">
     <div>
-        <h3>Have and idea for a new scrumptious meal!?</h3>
-        <p>Please be our guest and add to our list and spread the love!</p>
-        <a href="${pageContext.request.contextPath}/recipe/create" class="button big">Create</a>
+        <h3><spring:message code="recipe.idea"/></h3>
+        <p><spring:message code="recipe.share"/></p>
+        <a href="${pageContext.request.contextPath}/recipe/create" class="button big"><spring:message code="recipe.button.create"/></a>
     </div>
 </sec:authorize>
 </body>
