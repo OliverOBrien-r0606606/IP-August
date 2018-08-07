@@ -1,9 +1,10 @@
 var options;
 var optionList;
 var index;
+var url = window.location.protocol+"//"+window.location.hostname+":"+window.location.port+"/";
 
 $(document).ready(function () {
-    $.getJSON("http://localhost:8080/recipe/unit", function (response) {
+    $.getJSON(url+"recipe/unit", function (response) {
         options = response;
         optionList = $("<select>");
         $.each(response, function (i, o) {
@@ -36,7 +37,7 @@ $(document).ready(function () {
     });
 
 
-    $.getJSON("http://localhost:8080/recipe/allergies/"+$("#id").val(),function (response) {
+    $.getJSON(url+"recipe/allergies/"+$("#id").val(),function (response) {
         for(var allergy in response){
             console.log(allergy);
         }

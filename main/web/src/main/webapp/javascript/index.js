@@ -1,3 +1,6 @@
+
+var url = window.location.protocol+"//"+window.location.hostname+":"+window.location.port+"/";
+
 $(document).ready(function () {
     $("body").fadeIn(1000);
     $(".subNote").each(function () {
@@ -24,5 +27,5 @@ $(document).ready(function () {
 function clickHome(lang) {
     console.log(lang);
 
-    $("body").load("/home")
+    $("body").load(url+"home")
 }
