@@ -1,7 +1,7 @@
 var options;
 var optionList;
 var index;
-var url = window.location.protocol+"//"+window.location.hostname+":"+window.location.port+"/";
+var url = window.location.protocol+"//"+window.location.hostname+":"+window.location.port+"/Foodz/";
 
 $(document).ready(function () {
     $.getJSON(url+"recipe/unit", function (response) {

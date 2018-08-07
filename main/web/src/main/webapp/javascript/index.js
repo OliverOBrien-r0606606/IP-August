@@ -1,5 +1,5 @@
 
-var url = window.location.protocol+"//"+window.location.hostname+":"+window.location.port+"/";
+var url = window.location.protocol+"//"+window.location.hostname+":"+window.location.port+"/Foodz/";
 
 $(document).ready(function () {
     $("body").fadeIn(1000);
