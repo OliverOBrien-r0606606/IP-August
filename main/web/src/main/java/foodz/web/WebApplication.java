@@ -11,8 +11,14 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @ComponentScan({"foodz.db", "foodz.web", "foodz.model" })
 @EnableJpaRepositories("foodz.db")
-public class WebApplication  {
+public class WebApplication extends SpringBootServletInitializer {
+
 	public static void main(String[] args) {
 		SpringApplication.run(WebApplication.class, args);
+	}
+
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder){
+		return builder.sources(WebApplication.class);
 	}
 }

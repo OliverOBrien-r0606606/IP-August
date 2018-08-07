@@ -5,7 +5,9 @@ import org.springframework.lang.Nullable;
 import javax.persistence.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 public class Recipe {
@@ -112,6 +114,16 @@ public class Recipe {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Map<String,Boolean> getAllergyMap(){
+        Map<String, Boolean> allergyMap = new HashMap<String, Boolean>();
+        allergyMap.put("vegetarian",isVegetarian());
+        allergyMap.put("vegan",isVegan());
+        allergyMap.put("gluten",isGluten());
+        allergyMap.put("lactose",isLactose());
+        allergyMap.put("nuts",isNuts());
+        return allergyMap;
     }
 
 

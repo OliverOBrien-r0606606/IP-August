@@ -27,16 +27,20 @@ $(document).ready(function () {
             $(this).appendTo($("."+name));
             $(this).removeClass('.move');
         })
-
-
     });
     $('.item-remove-button').each(function () {
         $(this).click(function () {
             removeIngredientLine(this);
         })
 
-    })
+    });
 
+
+    $.getJSON("http://localhost:8080/recipe/allergies/"+$("#id").val(),function (response) {
+        for(var allergy in response){
+            console.log(allergy);
+        }
+    })
 });
 
 

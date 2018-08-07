@@ -39,17 +39,17 @@
             <td><form:textarea path="directions" name="directions" rows="10" cols="100"/></td>
             <td><form:errors path="directions"/></td>
         </tr>
-        <tr class="item-form-devider 3"><h3 class="move" name="3">${ingredients}:</h3></tr>
+        <tr class="item-form-devider 3"><h3 class="move" name="3">${alergies}:</h3></tr>
         <tr class="item-form-row">
             <td>
-                <form:checkbox path="vegetarian" name="vegitarian" value="vegitarian"/><spring:message code="recipe.allergies.vegetarian"/>
-                <form:checkbox path="vegan" name="vegan" value="vegan"/><spring:message code="recipe.allergies.vegan"/>
-                <form:checkbox path="gluten" name="gluten" value="gluten"/><spring:message code="recipe.allergies.gluten"/>
-                <form:checkbox path="lactose" name="lactose" value="lactose"/><spring:message code="recipe.allergies.lactose"/>
-                <form:checkbox path="nuts" name="nut" value="nut"/><spring:message code="recipe.allergies.nuts"/>
+                <span class="checkbox" id="vegetarian"><spring:message code="recipe.allergies.vegetarian"/></span>
+                <span class="checkbox" id="vegan"><spring:message code="recipe.allergies.vegan"/></span>
+                <span class="checkbox" id="gluten"><spring:message code="recipe.allergies.gluten"/></span>
+                <span class="checkbox" id="lactose"><spring:message code="recipe.allergies.lactose"/></span>
+                <span class="checkbox" id="nuts"><spring:message code="recipe.allergies.nuts"/></span>
             </td>
         </tr>
-        <tr class="item-form-devider 2"><h3 class="move" name="2">${alergies}:</h3></tr>
+        <tr class="item-form-devider 2"><h3 class="move" name="2">${ingredients}:</h3></tr>
         <tr class="item-form-row 1">
             <table class="move" name="1">
                 <thead>

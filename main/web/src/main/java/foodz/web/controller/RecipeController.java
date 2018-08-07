@@ -13,9 +13,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping("/recipe")
@@ -131,6 +129,14 @@ public class RecipeController {
     public String test(@RequestBody String test){
         System.out.println(test);
         return "";
+    }
+
+    @ResponseBody
+    @GetMapping("/allergies/{id}")
+    public Map<String,Boolean> getAllergies(@PathVariable String id){
+        System.out.println(id);
+        return recipeService.getRecipe(Long.parseLong(id)).getAllergyMap();
+
     }
 
 }

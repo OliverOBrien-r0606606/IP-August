@@ -31,12 +31,14 @@ public class UserServiceImpl{
 
     public void save(User user) {
         user.setPassword(encoder.encode(user.getPassword()));
+        /*
         System.out.println("USER MAIL: "+user.getEmail());
         System.out.println("USER USERNAME: "+user.getUsername());
         System.out.println("USER NAME: "+user.getName());
         System.out.println("USER SIRNAME: "+user.getSirName());
         System.out.println("USER ENABLED: "+user.getEnabled());
         System.out.println("USER PASS: "+user.getPassword());
+        */
         userRepository.save(user);
     }
 
@@ -53,13 +55,14 @@ public class UserServiceImpl{
 
     public boolean validateUser (String email, String pass){
         User out = getByEmail(email);
+        /*
         System.out.println("OUT MAIL: "+out.getEmail());
         System.out.println("OUT USERNAME: "+out.getUsername());
         System.out.println("OUT NAME: "+out.getName());
         System.out.println("OUT SIRNAME: "+out.getSirName());
         System.out.println("OUT ID: "+out.getUserId());
         System.out.println("OUT ENABLED: "+out.getEnabled());
-
+        */
         return out.authenticate(pass);
     }
 }

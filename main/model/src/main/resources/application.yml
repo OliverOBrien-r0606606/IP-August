@@ -1,4 +1,5 @@
 
+
 spring:
  profiles:
    active: postgres
@@ -38,7 +39,6 @@ spring:
      maximum-pool-size: 5
 
   jpa:
-   hibernate:
-    ddl-auto: create
+   database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 

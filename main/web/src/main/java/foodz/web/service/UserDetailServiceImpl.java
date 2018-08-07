@@ -44,6 +44,7 @@ public class UserDetailServiceImpl implements UserDetailsService {
         if(user== null){
             throw new UsernameNotFoundException("No user found with username= "+username);
         }
+        /*
         System.out.println("OUT MAIL: "+user.getEmail());
         System.out.println("OUT USERNAME: "+user.getUsername());
         System.out.println("OUT NAME: "+user.getName());
@@ -51,8 +52,9 @@ public class UserDetailServiceImpl implements UserDetailsService {
         System.out.println("OUT ID: "+user.getUserId());
         System.out.println("OUT ENABLED: "+user.getEnabled());
         System.out.println("USER FOUND");
+        */
         List<String> roles = roleRepository.findRoleByUserName(user.getUsername());
-        System.out.println(roles);
+//        System.out.println(roles);
         return new CustomUserDetails(user,roles);
     }
 }

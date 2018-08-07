@@ -43,7 +43,7 @@ public class UserController {
         userService.addRoleToUserByEmail(user.getEmail(),"ROLE_USER");
         securityService.autologin(user.getUsername(),user.getConfirmPassword());
 
-        return "redirect:/";
+        return "redirect:/home";
     }
 
 }
