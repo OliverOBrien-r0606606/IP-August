@@ -135,6 +135,7 @@
 							<name>${project.artifactId}</name>
 							<artifact>target/${project.build.finalName}.war</artifact>
 						</component>
+
 					</components>
 				</configuration>
 			</plugin>

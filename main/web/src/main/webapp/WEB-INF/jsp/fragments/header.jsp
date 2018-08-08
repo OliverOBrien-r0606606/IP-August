@@ -1,8 +1,8 @@
-<link type="text/css" rel="stylesheet" href="/css/main.css"/>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css"/>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<link rel="stylesheet" href="/css/navbar.css" type="text/css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/navbar.css" type="text/css">
 
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="script" uri="http://www.springframework.org/tags" %>

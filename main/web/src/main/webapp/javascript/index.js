@@ -1,5 +1,5 @@
 
-var url = window.location.protocol+"//"+window.location.hostname+":"+window.location.port+"/Foodz/";
+var url = window.location.protocol+"//"+window.location.hostname+":"+window.location.port+"/";
 
 $(document).ready(function () {
     $("body").fadeIn(1000);
@@ -26,6 +26,11 @@ $(document).ready(function () {
 
 function clickHome(lang) {
     console.log(lang);
+    $().load(url+"?lang="+lang);
+    $("body").fadeOut(500,function () {
+        $("body").load(url+"home",function () {
+            $(this).fadeIn(500)
+        })
+    })
 
-    $("body").load(url+"home")
 }

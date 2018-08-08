@@ -5,8 +5,8 @@
     <title>Foodz.</title>
 </head>
 <body style="display: none">
-<script type="text/javascript" src="javascript/jquery.js"></script>
-<script type="text/javascript" src="javascript/index.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/javascript/jquery.js"></script>
+<script type="text/javascript" src="/javascript/index.js"></script>
 <img id="banner" src="images/Foodz_Logo.png">
 
 <h1 id="welcome">Welcome to Foodz.!&trade;</h1>

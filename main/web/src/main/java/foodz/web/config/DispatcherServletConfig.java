@@ -16,6 +16,7 @@ import java.util.Locale;
 @Configuration
 public class DispatcherServletConfig implements WebMvcConfigurer {
 
+
     @Bean
     public LocaleResolver localeResolver() {
         CookieLocaleResolver localeResolver = new CookieLocaleResolver();
