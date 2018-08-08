@@ -3,9 +3,9 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<link rel="stylesheet" href="/css/navbar.css" type="text/css">
-<link type="text/css" rel="stylesheet" href="/css/main.css"/>
-<link type="text/css" rel="stylesheet" href="/css/formRecipe.css"/>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/navbar.css" type="text/css">
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css"/>
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/formRecipe.css"/>
 <html>
 <spring:message code="page.title.${pageName}" var="title"/>
 <jsp:include page="fragments/head.jsp">
@@ -65,14 +65,14 @@
                         <td class="name"><form:input path="ingredients[${status.index}].name" name="unit"/></td>
                         <td>
                             <a href="#" class="item-remove-button">
-                                <img src="/images/remove.gif" alt="add" title="remove ${ingredient.name}"
+                                <img src="${pageContext.request.contextPath}/images/remove.gif" alt="add" title="remove ${ingredient.name}"
                                      class="alterOption-icon">
                             </a></td>
                     </tr>
                 </c:forEach>
                 <tr id="list-item-new">
                     <a href="#" onclick="addIngredientLine()">
-                        <img src="/images/add.gif" alt="add" title="Add ingredient" class="alterOption-icon">
+                        <img src="${pageContext.request.contextPath}/images/add.gif" alt="add" title="Add ingredient" class="alterOption-icon">
                     </a>
                 </tr>
                 </tbody>
@@ -85,8 +85,8 @@
     </table>
 </form:form>
 <div id="ScriptContainer">
-    <script type="text/javascript" src="/javascript/jquery.js"></script>
-    <script type="text/javascript" src="/javascript/newRecipe.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/javascript/jquery.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/javascript/newRecipe.js"></script>
 </div>
 </body>
 </html>

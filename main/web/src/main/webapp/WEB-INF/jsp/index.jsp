@@ -6,14 +6,14 @@
 </head>
 <body style="display: none">
 <script type="text/javascript" src="${pageContext.request.contextPath}/javascript/jquery.js"></script>
-<script type="text/javascript" src="/javascript/index.js"></script>
-<img id="banner" src="images/Foodz_Logo.png">
+<script type="text/javascript" src="/${pageContext.request.contextPath}/javascript/index.js"></script>
+<img id="banner" src="${pageContext.request.contextPath}/images/Foodz_Logo.png">
 
 <h1 id="welcome">Welcome to Foodz.!&trade;</h1>
 
 <div id="OptionContainer">
     <div class="languageSelect">
-        <img class="languageImg" src="images/english.png"/>
+        <img class="languageImg" src="${pageContext.request.contextPath}/images/english.png"/>
         <h1>English</h1>
         <h4 class="subNote">Proceed in English</h4>
         <h4 style="visibility: hidden" class="welcomeNote">Welcome to Foodz.!&trade;</h4>
@@ -21,7 +21,7 @@
     </div>
 
     <div class="languageSelect">
-        <img class="languageImg" src="images/nederlands.png"/>
+        <img class="languageImg" src="${pageContext.request.contextPath}/images/nederlands.png"/>
         <h1>Nederlands</h1>
         <h4 class="subNote">In het Nederlands verder gaan</h4>
         <h4 style="visibility: hidden" class="welcomeNote">Welkom bij Foodz.!&trade;</h4>
@@ -29,7 +29,7 @@
     </div>
 
     <div class="languageSelect">
-        <img class="languageImg" src="images/french.png"/>
+        <img class="languageImg" src="${pageContext.request.contextPath}/images/french.png"/>
         <h1>Français</h1>
         <h4 class="subNote">Continuer en français</h4>
         <h4 style="visibility: hidden" class="welcomeNote">Bievenue chez Foodz.!&trade;</h4>

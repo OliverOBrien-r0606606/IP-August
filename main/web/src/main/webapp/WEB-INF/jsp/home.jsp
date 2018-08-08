@@ -10,8 +10,8 @@
 </jsp:include>
 <body>
 <div>
-    <script type="text/javascript" src="javascript/jquery.js"></script>
-    <script type="text/javascript" src="javascript/fader.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/javascript/jquery.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/javascript/fader.js"></script>
 </div>
 <jsp:include page="fragments/header.jsp">
     <jsp:param name="page" value="Home"/>

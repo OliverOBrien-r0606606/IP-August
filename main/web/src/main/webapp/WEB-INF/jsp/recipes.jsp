@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="/css/navbar.css" type="text/css">
-<link type="text/css" rel="stylesheet" href="/css/main.css"/>
+
 <link type="text/css" rel="stylesheet" href="/css/table.css"/>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -45,19 +44,19 @@
                     <td>
                         <h4>${recipe.name}</h4>
                         <c:if test="${recipe.vegetarian}">
-                            <img src="/images/vegetarian.gif" class="item-boolean-icon" title="${vegetarian}">
+                            <img src="${pageContext.request.contextPath}/images/vegetarian.gif" class="item-boolean-icon" title="${vegetarian}">
                         </c:if>
                         <c:if test="${recipe.vegan}">
-                            <img src="/images/vegan.gif" class="item-boolean-icon" title="${vegan}">
+                            <img src="${pageContext.request.contextPath}/images/vegan.gif" class="item-boolean-icon" title="${vegan}">
                         </c:if>
                         <c:if test="${recipe.gluten}">
-                            <img src="/images/gluten.gif" class="item-boolean-icon" title="${gluten}">
+                            <img src="${pageContext.request.contextPath}/images/gluten.gif" class="item-boolean-icon" title="${gluten}">
                         </c:if>
                         <c:if test="${recipe.lactose}">
-                            <img src="/images/lactose.gif" class="item-boolean-icon" title="${lactose}">
+                            <img src="${pageContext.request.contextPath}/images/lactose.gif" class="item-boolean-icon" title="${lactose}">
                         </c:if>
                         <c:if test="${recipe.nuts}">
-                            <img src="/images/nut.gif" class="item-boolean-icon" title="${nuts}">
+                            <img src="${pageContext.request.contextPath}/images/nut.gif" class="item-boolean-icon" title="${nuts}">
                         </c:if>
                     </td>
                     <td class="item-expandable">
@@ -91,10 +90,10 @@
                     <sec:authorize access="hasRole('ROLE_ADMIN')">
                         <td>
                             <a href="${pageContext.request.contextPath}/recipe/edit/${recipe.id}">
-                                <img src="/images/edit.gif" class="alterOption-icon">
+                                <img src="${pageContext.request.contextPath}/images/edit.gif" class="alterOption-icon">
                             </a>
                             <a href="${pageContext.request.contextPath}/recipe/delete/${recipe.id}">
-                                <img src="/images/delete.gif" class="alterOption-icon">
+                                <img src="${pageContext.request.contextPath}/images/delete.gif" class="alterOption-icon">
                             </a>
                         </td>
                     </sec:authorize>
