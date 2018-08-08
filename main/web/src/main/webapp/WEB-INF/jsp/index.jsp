@@ -6,7 +6,7 @@
 </head>
 <body style="display: none">
 <script type="text/javascript" src="${pageContext.request.contextPath}/javascript/jquery.js"></script>
-<script type="text/javascript" src="/${pageContext.request.contextPath}/javascript/index.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/javascript/index.js"></script>
 <img id="banner" src="${pageContext.request.contextPath}/images/Foodz_Logo.png">
 
 <h1 id="welcome">Welcome to Foodz.!&trade;</h1>
