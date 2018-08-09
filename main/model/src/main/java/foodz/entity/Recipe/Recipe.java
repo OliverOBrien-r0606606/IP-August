@@ -1,5 +1,6 @@
 package foodz.entity.Recipe;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Recipe {
 
     @Id

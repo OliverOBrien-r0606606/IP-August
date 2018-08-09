@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.*;
@@ -21,6 +22,20 @@ public class RecipeController {
 
     @Autowired
     private RecipeService recipeService;
+
+    @RequestMapping()
+    public String getList(){
+
+        return recipeService.getRecipes().toString();
+
+    }
+
+    public String test(){
+
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.getForObject("totatllylegitrestservice.com/api"+"totqllylegitqpikey",String.class);
+
+    }
 
     @RequestMapping("/list")
     public ModelAndView toRecipes() {

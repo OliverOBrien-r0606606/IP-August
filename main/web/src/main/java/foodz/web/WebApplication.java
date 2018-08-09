@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@ComponentScan({"foodz.db", "foodz.web", "foodz.model" })
+@ComponentScan({"foodz.db", "foodz.web", "foodz.model", "foodz.rest"})
 @EnableJpaRepositories("foodz.db")
 public class WebApplication extends SpringBootServletInitializer {
 
