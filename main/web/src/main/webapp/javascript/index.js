@@ -26,7 +26,13 @@ $(document).ready(function () {
 
 function clickHome(lang) {
     console.log(lang);
-    $().load(url+"?lang="+lang);
+    $.ajax({
+        type:"GET",
+        url:url+"?lang="+lang,
+        success:function () {
+            
+        }
+    });
     $("body").fadeOut(500,function () {
         $("body").load(url+"home",function () {
             $(this).fadeIn(500)
