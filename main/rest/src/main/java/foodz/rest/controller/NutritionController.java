@@ -29,10 +29,11 @@ public class NutritionController {
         //
     }
 
-    @RequestMapping("/recipeRequest")
+    @PostMapping("/recipeRequest")
     public ResponseEntity<List<Ingredient>> getRecipe(@RequestBody String id){
+        System.out.println(id);
         Recipe recipe = service.getRecipe(Long.parseLong(id));
-        /*
+
         System.out.println("###############[RECIPE]#################");
         System.out.println("NAME: "+recipe.getName());
         System.out.println("DESCRIPTION: "+recipe.getName());
@@ -48,7 +49,7 @@ public class NutritionController {
                 ((recipe.isGluten())?"G ":"")+
                 ((recipe.isLactose())?"L ":"")+
                 ((recipe.isNuts())?"N ":""));
-        */
+
         return new ResponseEntity<List<Ingredient>>(recipe.getIngredients(), HttpStatus.OK);
     }
 }
