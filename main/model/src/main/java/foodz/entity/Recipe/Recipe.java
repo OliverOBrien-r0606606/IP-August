@@ -148,4 +148,20 @@ public class Recipe {
     public Recipe() {
 
     }
+
+    @Override
+    public String toString() {
+        return "Recipe{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", directions='" + directions + '\'' +
+                ", description='" + description + '\'' +
+                ", vegetarian=" + vegetarian +
+                ", vegan=" + vegan +
+                ", gluten=" + gluten +
+                ", lactose=" + lactose +
+                ", nuts=" + nuts +
+                ", ingredients=" + ingredients +
+                '}';
+    }
 }

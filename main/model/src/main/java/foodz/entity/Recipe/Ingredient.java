@@ -1,5 +1,7 @@
 package foodz.entity.Recipe;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -53,5 +55,10 @@ public class Ingredient {
 
     public Ingredient(String name, double amount, String unit) {
         setAmount(amount); setName(name); setUnit(unit);
+    }
+
+    @Override
+    public String toString(){
+        return amount+" " +unit+" "+name+" ";
     }
 }

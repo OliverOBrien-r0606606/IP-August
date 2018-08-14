@@ -23,17 +23,10 @@ public class RecipeController {
     @Autowired
     private RecipeService recipeService;
 
-    @RequestMapping()
-    public String getList(){
+    @RequestMapping("/details")
+    public String getDetails(){
 
-        return recipeService.getRecipes().toString();
-
-    }
-
-    public String test(){
-
-        RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForObject("totatllylegitrestservice.com/api"+"totqllylegitqpikey",String.class);
+        return "details.html";
 
     }
 

@@ -43,11 +43,11 @@ INSERT INTO recipe(description, directions, name,vegetarian,vegan,gluten,lactose
 
 INSERT INTO ingredient (amount, name, unit) VALUES
 (2,'Eggs','piece'),
-(50,'Cheese (I used cheddar)','gram'),
+(50,'cheddar','gram'),
 (1,'Onion','piece'),
 (200,'Mushrooms','gram'),
 (250,'Paprika','gram'),
-(1,'Sharwoods Tandoori paste','tablespoon'),
+(1,'Red curry paste','tablespoon'),
 (1,'Brown sugar','tablespoon'),
 (0.5,'Basmati rice','cup');
 

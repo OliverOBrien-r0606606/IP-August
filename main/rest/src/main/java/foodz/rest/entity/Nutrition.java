@@ -2,8 +2,6 @@ package foodz.rest.entity;
 
 public class Nutrition {
 
-    private String name;
-    private double quantity;
     private double calories;
     private double total_fat;
     private double saturated_fat;
@@ -14,22 +12,6 @@ public class Nutrition {
     private double sugar;
     private double protein;
     private double potassium;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(double quantity) {
-        this.quantity = quantity;
-    }
 
     public double getCalories() {
         return calories;
@@ -114,9 +96,8 @@ public class Nutrition {
     public Nutrition() {
 
     }
-    public Nutrition(String name, double quantity, double calories, double total_fat, double saturated_fat, double cholesterol, double sodium, double total_carbohydrate, double dietary_fiber, double sugar, double protein, double potassium) {
-        this.name = name;
-        this.quantity = quantity;
+    public Nutrition(double calories, double total_fat, double saturated_fat, double cholesterol, double sodium, double total_carbohydrate, double dietary_fiber, double sugar, double protein, double potassium) {
+
         this.calories = calories;
         this.total_fat = total_fat;
         this.saturated_fat = saturated_fat;
@@ -127,5 +108,34 @@ public class Nutrition {
         this.sugar = sugar;
         this.protein = protein;
         this.potassium = potassium;
+    }
+
+    @Override
+    public String toString() {
+        return "Nutrition{" +
+                ", calories=" + calories +
+                ", total_fat=" + total_fat +
+                ", saturated_fat=" + saturated_fat +
+                ", cholesterol=" + cholesterol +
+                ", sodium=" + sodium +
+                ", total_carbohydrate=" + total_carbohydrate +
+                ", dietary_fiber=" + dietary_fiber +
+                ", sugar=" + sugar +
+                ", protein=" + protein +
+                ", potassium=" + potassium +
+                '}';
+    }
+
+    public void addNutrition(Food food){
+        calories+=food.getNf_calories();
+        cholesterol+=food.getNf_cholesterol();
+        total_carbohydrate+=food.getNf_total_carbohydrate();
+        total_fat+= food.getNf_total_fat();
+        saturated_fat+=food.getNf_saturated_fat();
+        sodium+= food.getNf_sodium();
+        dietary_fiber+= food.getNf_dietary_fiber();
+        sugar+= food.getNf_sugars();
+        protein+= food.getNf_protein();
+        potassium+= food.getNf_potassium();
     }
 }
