@@ -1,9 +1,0 @@
-spring:
- profiles: dev
-url: http://localhost:8080
-
----
-
-spring:
- profiles: prod
-url: http://193.191.177.8:10358/Foodz

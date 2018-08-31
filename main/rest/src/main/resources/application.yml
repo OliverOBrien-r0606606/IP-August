@@ -1,16 +1,5 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+environments:
+ prod:
+  rest-url:http://192.http://193.191.177.8:10358/REST
+ dev:
+  rest-url:http://localhost:8081

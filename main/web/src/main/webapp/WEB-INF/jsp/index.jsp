@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link type="text/css" rel="stylesheet" href="/css/index.css">
+<link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css">
 <html>
 <head>
     <title>Foodz.</title>
